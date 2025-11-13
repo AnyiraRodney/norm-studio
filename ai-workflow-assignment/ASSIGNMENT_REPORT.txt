@@ -1,0 +1,87 @@
+=================================================
+ASSIGNMENT: UNDERSTANDING THE AI DEVELOPMENT WORKFLOW
+=================================================
+
+### Part 1: Short Answer Questions (Hypothetical Problem)
+
+**1. Problem Definition**
+* **Hypothetical Problem:** Predicting student dropout rates at a university.
+* **Objectives:**
+    1. Identify at-risk students before mid-terms.
+    2. Enable timely intervention by advisors.
+    3. Improve retention rates by 5%.
+* **Stakeholders:** University Registrar, Student Counsellors.
+* **KPI:** Precision (Minimize false alarms so counsellors don't waste time).
+
+**2. Data Collection & Preprocessing**
+* **Data Sources:** Student Information System (SIS), Learning Management System (LMS).
+* **Potential Bias:** Socioeconomic Bias (Students with poor internet might appear "disengaged").
+* **Preprocessing Steps:**
+    1. Imputation (Filling missing login data with 0).
+    2. Normalization (Scaling GPA to 0-1 range).
+    3. Encoding (Converting 'Major' to numbers).
+
+**3. Model Development**
+* **Model:** Random Forest.
+* **Justification:** Handles complex, non-linear data well and provides feature importance (interpretable).
+* **Splitting:** Training (70%), Validation (15%), Test (15%).
+* **Hyperparameters:** `n_estimators` (tree count), `max_depth` (prevent overfitting).
+
+**4. Evaluation & Deployment**
+* **Metrics:** Recall (Must find all dropouts), F1-Score (Balance).
+* **Concept Drift:** Changes in student behavior (e.g., post-pandemic). Monitor by checking accuracy weekly.
+* **Challenge:** Scalability (Processing real-time logs for 50k students).
+
+---
+
+### Part 2: Case Study Application (Hospital Readmission)
+
+**1. Problem Scope**
+* **Goal:** Predict readmission risk within 30 days.
+* **Stakeholders:** Doctors, Discharge Planners, Hospital Admin.
+
+**2. Data Strategy**
+* **Sources:** Electronic Health Records (EHR), Demographics.
+* **Ethical Concerns:** Patient Privacy (HIPAA), Algorithmic Bias (Race/Insurance proxies).
+* **Preprocessing Pipeline:**
+    1. Anonymize Data.
+    2. Clean missing lab values.
+    3. Feature Engineering (e.g., `days_since_last_visit`, `comorbidity_score`).
+
+**3. Model Development**
+* **Model:** Logistic Regression.
+* **Justification:** High interpretability. Doctors need to know *why* a patient is flagged (white-box model).
+* **Hypothetical Results (from code):**
+    * Precision: 0.7143
+    * Recall: 0.6250
+    * Confusion Matrix: [[10, 2], [3, 5]]
+
+**4. Deployment**
+* **Integration:** Model deployed as an API container. EHR triggers API on "Discharge Order". Risk score appears on Doctor's dashboard.
+* **Compliance:** Data Encryption (in transit/at rest), Access Logs, No PHI storage in the model.
+
+**5. Optimization**
+* **Overfitting:** Use L2 Regularization to penalize large coefficients.
+
+---
+
+### Part 3: Critical Thinking
+
+**1. Ethics & Bias**
+* **Issue:** If training data shows low-income patients return more often (due to lack of transport), the AI might unfairly flag them as "medically high risk," leading to potential denial of discharge or stigmatization.
+* **Strategy:** Bias-Aware Feature Selection (Remove zip code/insurance type; audit proxies).
+
+**2. Trade-offs**
+* **Interpretability vs Accuracy:** We choose a slightly less accurate Logistic Regression (87%) over a Neural Network (90%) because doctors must trust and understand the decision rationale.
+* **Resource Constraints:** If no GPUs are available, we must avoid Deep Learning and use CPU-efficient models like Logistic Regression or Decision Trees.
+
+---
+
+### Part 4: Reflection & Workflow Diagram
+
+**1. Reflection**
+* **Challenge:** Data Cleaning. Real medical data is messy and fragmented across systems.
+* **Improvement:** Spend more time on Feature Engineering by interviewing doctors for "gut feeling" indicators.
+
+**2. Workflow Diagram**
+(Start) -> 1. Problem Definition -> 2. Data Collection -> 3. Preprocessing -> 4. Model Development -> 5. Evaluation -> 6. Deployment -> 7. Monitoring -> (Loop back)
