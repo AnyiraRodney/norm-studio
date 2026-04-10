@@ -8,9 +8,9 @@ const DELIVERY_FEE = 150; // KES flat rate
 
 const PRODUCTS = [
   { id:"315-bowl",      name:"The 315 Bowl",      subtitle:"Hand-thrown stoneware",  price:2800, image:"/images/shop/315-bowl.png",      tag:"Bestseller" },
-  { id:"stackable-cup", name:"Stackable Cup 01",  subtitle:"Wheel-thrown, stackable",price:1800, image:"/images/shop/stackable-cup.jpg",  tag:null },
-  { id:"pour-over",     name:"Gigiri Pour-Over",  subtitle:"Single-hole dripper",    price:3500, image:"/images/shop/pour-over.jpg",       tag:"New" },
-  { id:"glaze-plate",   name:"Studio Glaze Plate",subtitle:"Slab-built dinner plate",price:2200, image:"/images/shop/glaze-plate.jpg",     tag:null },
+  { id:"stackable-cup", name:"Stackable Cup 01",  subtitle:"Wheel-thrown, stackable",price:1800, image:"/images/shop/stackable-cup.png",  tag:null },
+  { id:"pour-over",     name:"Gigiri Pour-Over",  subtitle:"Single-hole dripper",    price:3500, image:"/images/shop/pour-over.png",      tag:"New" },
+  { id:"glaze-plate",   name:"Studio Glaze Plate",subtitle:"Slab-built dinner plate",price:2200, image:"/images/shop/glaze-plate.png",     tag:null },
 ];
 
 type CartItem = { product: typeof PRODUCTS[0]; qty: number };
