@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Brand CSS Variables ─── */
+:root {
+  --color-umber: #1A110B;
+  --color-terracotta: #FF4D00;
+  --color-linen: #FDF9F3;
+  --color-charcoal: #2D2926;
+  --color-clay: #D27D56;
+  --color-ash: #B4ADA6;
+}
+
+/* ─── Tailwind v4 Theme Mapping ─── */
+@theme {
+  --color-umber: var(--color-umber);
+  --color-terracotta: var(--color-terracotta);
+  --color-linen: var(--color-linen);
+  --color-charcoal: var(--color-charcoal);
+  --color-clay: var(--color-clay);
+  --color-ash: var(--color-ash);
+  
+  --font-heading: var(--font-cormorant), serif;
+  
+  --font-body: "Satoshi", sans-serif;
+}
+
+/* ─── Base Styles ─── */
+body {
+  background-color: var(--color-linen);
+  color: var(--color-umber);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  
+  /* This safely prevents horizontal scrolling without trapping the mouse wheel */
+  overflow-x: clip; 
+}
+
+.blend-difference {
+  mix-blend-mode: difference;
+}
+
+/* 👇 Cages the GSAP pin-spacer so the 400vw gallery doesn't stretch mobile screens 👇 */
+.pin-spacer {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+html, body {
+  max-width: 100vw !important;
+  overflow-x: clip !important;
+}
