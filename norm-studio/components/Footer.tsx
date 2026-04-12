@@ -120,10 +120,28 @@ export default function Footer() {
               hello@normstudio.co.ke
             </a>
 
-            {/* Social */}
+            {/* 🚀 Updated App-Specific Social Links 🚀 */}
             <div style={{ display: "flex", gap: "1.25rem" }}>
-              <a href="https://www.instagram.com/normstudioke/" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-satoshi, system-ui)", fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(253,249,243,0.35)", textDecoration: "none", transition: "color 0.2s", padding: "8px 0" }} onMouseEnter={e => (e.currentTarget.style.color = "#FF4D00")} onMouseLeave={e => (e.currentTarget.style.color = "rgba(253,249,243,0.35)")}>Instagram</a>
-              <a href="https://www.tiktok.com/@normstudio.ke" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-satoshi, system-ui)", fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(253,249,243,0.35)", textDecoration: "none", transition: "color 0.2s", padding: "8px 0" }} onMouseEnter={e => (e.currentTarget.style.color = "#FF4D00")} onMouseLeave={e => (e.currentTarget.style.color = "rgba(253,249,243,0.35)")}>TikTok</a>
+              <a 
+                href="https://www.instagram.com/_u/normstudioke/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{ fontFamily: "var(--font-satoshi, system-ui)", fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(253,249,243,0.35)", textDecoration: "none", transition: "color 0.2s", padding: "8px 0" }} 
+                onMouseEnter={e => (e.currentTarget.style.color = "#FF4D00")} 
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(253,249,243,0.35)")}
+              >
+                Instagram
+              </a>
+              <a 
+                href="https://www.tiktok.com/@normstudio.ke" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{ fontFamily: "var(--font-satoshi, system-ui)", fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(253,249,243,0.35)", textDecoration: "none", transition: "color 0.2s", padding: "8px 0" }} 
+                onMouseEnter={e => (e.currentTarget.style.color = "#FF4D00")} 
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(253,249,243,0.35)")}
+              >
+                TikTok
+              </a>
             </div>
           </div>
 
